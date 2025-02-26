@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:qube_cashier/core/widgets/adaptive_ui.dart';
 
-import '../tabletView/tablet_ui_layout.dart';
+import '../widgets/tablet_ui_layout.dart';
 
 class MainLayout extends StatelessWidget {
   const MainLayout({super.key});

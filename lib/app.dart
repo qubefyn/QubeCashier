@@ -6,7 +6,7 @@ import 'package:qube_cashier/core/helper%20function/on_generate_function.dart';
 import 'package:qube_cashier/core/widgets/disconnected_screen.dart';
 import 'package:qube_cashier/injection_container.dart' as di;
 
-import 'Features/MainLayout/presentaition/view/webview/main_layout.dart';
+import 'Features/MainLayout/presentaition/view/main_layout.dart';
 import 'config/locale/app_localizations_setup.dart';
 
 class QubeCashier extends StatefulWidget {
