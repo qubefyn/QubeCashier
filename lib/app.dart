@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:overlay_support/overlay_support.dart';
-import 'package:qube_cashier/Features/Main/presentation/views/main_layout.dart';
 import 'package:qube_cashier/core/Network/connection_cubit.dart';
 import 'package:qube_cashier/core/helper%20function/on_generate_function.dart';
 import 'package:qube_cashier/core/widgets/disconnected_screen.dart';
 import 'package:qube_cashier/injection_container.dart' as di;
+
+import 'Features/MainLayout/presentaition/view/webview/main_layout.dart';
+import 'config/locale/app_localizations_setup.dart';
 
 class QubeCashier extends StatefulWidget {
   const QubeCashier({super.key});
@@ -16,6 +18,7 @@ class QubeCashier extends StatefulWidget {
 
 class _QubeCashierState extends State<QubeCashier> {
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
   @override
   Widget build(BuildContext context) {
     return OverlaySupport.global(
@@ -35,16 +38,12 @@ class _QubeCashierState extends State<QubeCashier> {
             } else {
               return MaterialApp(
                 navigatorKey: navigatorKey,
-                supportedLocales: const [
-                  Locale('ar'),
-                ],
-                localizationsDelegates: const [
-                  /*   S.delegate,
-                  GlobalMaterialLocalizations.delegate,
-                  GlobalWidgetsLocalizations.delegate,
-                  GlobalCupertinoLocalizations.delegate, */
-                ],
-                locale: const Locale('ar'),
+                supportedLocales: AppLocalizationsSetup.supportedLocales,
+                localizationsDelegates:
+                    AppLocalizationsSetup.localizationsDelegates,
+                localeResolutionCallback:
+                    AppLocalizationsSetup.localeResolutionCallback,
+                locale: Locale('en'),
                 debugShowCheckedModeBanner: false,
                 onGenerateRoute: onGenerateRoute,
                 initialRoute: MainLayout.routeName,

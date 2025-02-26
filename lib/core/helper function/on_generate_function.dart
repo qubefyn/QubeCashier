@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:qube_cashier/Features/Main/presentation/views/main_layout.dart';
+
+import '../../Features/MainLayout/presentaition/view/webview/main_layout.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
