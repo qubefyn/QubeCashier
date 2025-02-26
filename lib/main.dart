@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:qube_cashier/app.dart';
@@ -15,5 +16,8 @@ void main() async {
   //Stripe.publishableKey=EndPoints.publishableKey;
   Bloc.observer = AppBlocObserver();
   ConfigLoading.configLoading();
-  runApp(const QubeCashier());
+  runApp( DevicePreview(
+    enabled:true  ,
+    builder: (context) => QubeCashier(), // Wrap your app
+  ),);
 }

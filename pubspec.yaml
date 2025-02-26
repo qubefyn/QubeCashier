@@ -43,6 +43,7 @@ dependencies:
   intl_utils: ^2.8.7
   overlay_support: ^2.1.0
   shared_preferences: ^2.3.5
+  device_preview:
 
 dev_dependencies:
   flutter_intl: ^0.0.1
