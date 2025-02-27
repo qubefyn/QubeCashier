@@ -16,8 +16,10 @@ void main() async {
   //Stripe.publishableKey=EndPoints.publishableKey;
   Bloc.observer = AppBlocObserver();
   ConfigLoading.configLoading();
-  runApp( DevicePreview(
-    enabled:true  ,
-    builder: (context) => QubeCashier(), // Wrap your app
-  ),);
+  runApp(
+    DevicePreview(
+      enabled: false,
+      builder: (context) => const QubeCashier(),
+    ),
+  );
 }

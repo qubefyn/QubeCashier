@@ -5,6 +5,7 @@ import 'package:qube_cashier/core/Network/connection_cubit.dart';
 import 'package:qube_cashier/core/helper%20function/on_generate_function.dart';
 import 'package:qube_cashier/core/widgets/disconnected_screen.dart';
 import 'package:qube_cashier/injection_container.dart' as di;
+import 'package:sizer/sizer.dart';
 
 import 'Features/MainLayout/presentaition/view/main_layout.dart';
 import 'config/locale/app_localizations_setup.dart';
@@ -36,18 +37,20 @@ class _QubeCashierState extends State<QubeCashier> {
                 debugShowCheckedModeBanner: false,
               );
             } else {
-              return MaterialApp(
-                navigatorKey: navigatorKey,
-                supportedLocales: AppLocalizationsSetup.supportedLocales,
-                localizationsDelegates:
-                    AppLocalizationsSetup.localizationsDelegates,
-                localeResolutionCallback:
-                    AppLocalizationsSetup.localeResolutionCallback,
-                locale: Locale('en'),
-                debugShowCheckedModeBanner: false,
-                onGenerateRoute: onGenerateRoute,
-                initialRoute: MainLayout.routeName,
-              );
+              return Sizer(builder: (context, orientation, screenType) {
+                return MaterialApp(
+                  navigatorKey: navigatorKey,
+                  supportedLocales: AppLocalizationsSetup.supportedLocales,
+                  localizationsDelegates:
+                      AppLocalizationsSetup.localizationsDelegates,
+                  localeResolutionCallback:
+                      AppLocalizationsSetup.localeResolutionCallback,
+                  locale: Locale('en'),
+                  debugShowCheckedModeBanner: false,
+                  onGenerateRoute: onGenerateRoute,
+                  initialRoute: MainLayout.routeName,
+                );
+              });
             }
           },
         ),

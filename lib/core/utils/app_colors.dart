@@ -4,7 +4,7 @@ import 'hex_color.dart';
 
 class AppColors {
   static Color primaryColor = const Color(0xFF000080);
-
+  static Color secondaryColor = const Color(0xFFF1F4FF);
   static Color selectColorHome = HexColor("#1007FA");
   static Color onBordingSubTitle = HexColor("#B4AEAE");
   static Color hintColor = HexColor("#808080");
@@ -55,7 +55,6 @@ class AppColors {
 
   ////////////////// Shehab Colors /////////////
 
-  static const secondaryColor = Color(0xFF70928A);
   static const spotColor = Color(0xFF80BBEE);
   static const mainColor = Color(0xff1C0D40);
   static const customGrey = Color(0xff999999);

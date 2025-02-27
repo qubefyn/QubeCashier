@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:qube_cashier/Features/OverView/presentation/views/tablet_over_view_screen.dart';
 import 'package:qube_cashier/core/widgets/adaptive_ui.dart';
-
-import '../widgets/tablet_ui_layout.dart';
 
 class MainLayout extends StatelessWidget {
   const MainLayout({super.key});
@@ -12,8 +10,7 @@ class MainLayout extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xffF7F9FA),
       body: AdaptiveUi(
-
-        tabletLayout: (context) => const TabletUiLayout(),
+        tabletLayout: (context) => const TabletOverViewScreen(),
       ),
     );
   }
